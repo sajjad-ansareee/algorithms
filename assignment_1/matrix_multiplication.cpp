@@ -1,37 +1,8 @@
+#include "../utilities.hpp"
 #include <iostream>
 #include <vector>
 
 using namespace std;
-
-vector<vector<int>> initialize_matrix() {
-	cout<<"rows: ";
-	size_t rows; cin>>rows;
-	cout<<"columns: ";
-	size_t columns; cin>>columns;
-	vector<vector<int>> matrix(rows, vector<int>(columns));
-	cout<<"elements: "<<endl;
-	for (size_t i=0; i<rows; ++i) {
-		cout<<"row#"<<i<<": ";
-		for (size_t j=0; j<columns; ++j) {
-			cin>>matrix[i][j];
-		}
-	}
-	return matrix;
-}
-
-void print_matrix(const vector<vector<int>>& matrix) {
-	size_t rows=matrix.size();
-	if (rows==0) {
-		return;
-	}
-	size_t columns=matrix[0].size();
-	for (size_t i=0; i<rows; ++i) {
-		for (size_t j=0; j<columns; ++j) {
-			cout<<matrix[i][j]<<" ";
-		}
-		cout<<endl;
-	}
-}
 
 vector<vector<int>> matrix_multiplication(const vector<vector<int>>& a, const vector<vector<int>>& b) {
 	size_t a_rows=a.size();
@@ -42,7 +13,6 @@ vector<vector<int>> matrix_multiplication(const vector<vector<int>>& a, const ve
 	if (a_columns!=b_rows) {
 		cout<<"multiplication not possible..."<<endl;
 	} else {
-		int sum=0;
 		for (int i=0; i<a_rows; ++i) {
 			for (int j=0; j<b_columns; ++j) {
 				for (int k=0; k<a_columns; ++k) {
