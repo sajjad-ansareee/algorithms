@@ -16,6 +16,9 @@
 #define SCORE_HUMAN_WIN		-10
 #define SCORE_DRAW			0
 
+/* larger than any real score, used as the starting value when searching for best or worst score */
+#define SCORE_INFINITY		1000
+
 /* game status values */
 #define STATUS_ONGOING		0
 #define STATUS_HUMAN_WIN	1
